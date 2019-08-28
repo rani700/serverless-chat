@@ -1,0 +1,38 @@
+<!-- <div class="test">Hello</div> -->
+<section class="connect" *ngIf="!isConnected">
+	<div class="peerid">
+		<b>Your Peer Id : </b><mat-form-field><input matInput type="text" value="{{mypeerid}}" #thepeerid></mat-form-field>
+		<button (click)="copyInputMessage(thepeerid)" value="click to copy"  mat-stroked-button>Copy</button>
+	</div>
+	<div class="remote">
+		<b>Your Friends Peer id : </b><mat-form-field><input matInput type="text" #remotepeerid></mat-form-field>
+		<button (click)="connect(remotepeerid.value)" mat-stroked-button>Connect</button>
+		<br>
+		<button mat-stroked-button routerLink="/video">Video Call</button>
+	</div>
+	<div>{{remotePeerId}}</div>
+</section>
+
+
+<section class="chat" *ngIf="isConnected">
+	<div class="messageBox" *ngIf="toggle">
+		<!-- {{remoteMessage}} -->
+		<!-- <input type="text" [(value)] = "remoteMessage"> -->
+	</div>
+	<div class="inputBox">
+		<mat-form-field class="ipBox"><textarea matInput type="text"  #myMessage (keyup)="send(myMessage.value)" placeholder="Type here" class="myMessage" [(ngModel)]="vMessage" cols="10"></textarea></mat-form-field>
+		<button (click)="clear()" mat-stroked-button class="clearButton">Clear</button>
+		<button mat-stroked-button routerLink="/video">Video Call</button>
+	</div>
+</section>
+
+<section class="footer">
+	<span>&copy; 2019 all rights reserved.</span> 	
+</section>
+
+<section class="progress" *ngIf="progress">
+	<span>
+		<mat-spinner></mat-spinner>
+		<span>Connecting Please wait ...</span>
+	</span>
+</section>

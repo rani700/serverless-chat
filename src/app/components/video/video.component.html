@@ -1,0 +1,22 @@
+<section class="video-container">
+	<video autoplay="true" class="myVideo" muted></video>
+	<video autoplay="true" class="friendVideo"></video>
+	<section class="actions" *ngIf="!isconnected">
+		<div class="peerid">
+			<b>Your Peer Id : </b><mat-form-field><input matInput type="text" value="{{mypeerid}}" #thepeerid></mat-form-field>
+			<button (click)="copyInputMessage(thepeerid)" value="click to copy"  mat-stroked-button>Copy</button>
+		</div>
+		<div *ngIf="!isconnected">
+			<b>Your Friends Peer id : </b>
+			<mat-form-field>
+				<input matInput type="text" #remotepeerid>
+			</mat-form-field>
+			<button (click)="startCall(remotepeerid.value)" mat-stroked-button>Connect</button>
+			<br>
+			<button mat-stroked-button routerLink="/">Chat</button>
+		</div>
+	</section>
+</section>
+<section class="footer">
+	<span>&copy; 2019 all rights reserved.</span>
+</section>

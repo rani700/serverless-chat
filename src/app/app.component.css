@@ -1,0 +1,6 @@
+.appname{
+	height: 10vh;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+}

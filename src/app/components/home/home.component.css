@@ -1,0 +1,66 @@
+@import url('https://fonts.googleapis.com/css?family=Dokdo');
+.connect, .chat{
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	flex-direction: column;
+	width: 100%;
+	height: 80vh;
+	/*border: 1px solid black;*/
+}
+.footer{
+	position: absolute;
+	bottom: 0;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	flex-direction: column;
+	width: 100%;
+	height: 10vh;
+	background-color: grey;
+	color: white;
+}
+.footer a{
+	color: white;
+}
+.messageBox, .inputBox{
+	width: 100%;
+	height: 50%;
+	border: 1px solid grey;
+}
+.inputBox mat-form-field{
+	width: 100%;
+	height: 80%;
+}
+
+.inputBox{
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	justify-content: flex-end;
+}
+.ipBox{
+	flex: 6;
+}
+.clearBox{
+	flex: 1
+}
+
+.messageBox{
+	font-size: 22px;
+	font-family: 'Dokdo';
+}
+/*.chat{
+	display: none;
+}*/
+
+.progress{
+	width: 100%;
+	height: 100vh;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	position: absolute;
+	top: 0;
+	background-color: rgba(111,111,111,0.5);
+}
